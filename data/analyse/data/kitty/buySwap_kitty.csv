@@ -1,0 +1,2 @@
+transactionHash,blockNumber,timestamp,position,transactionFee,coinbase_transfer,mortgage,reward,cost,premium
+0x6d83b11fe6fa67bf7423a385f6f40c769f6aa1b2eecb52e6885dee057ef5afab,13655168,1637456308,3,41005433495436480,46012388773040485,true,102223012499784674,10198234953703703,none
