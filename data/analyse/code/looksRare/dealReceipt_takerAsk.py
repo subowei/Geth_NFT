@@ -1,6 +1,6 @@
 
 import numpy as np
-import csv    #加载csv包便于读取csv文件
+import csv
 import zipfile
 import os
 import json

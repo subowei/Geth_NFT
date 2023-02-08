@@ -116,17 +116,17 @@ func getGethOriDataSortByBlockNum() {
 		return false
 	})
 
-	f, err := os.Create("../data/csv/tokenMapERC721ResSorted.csv") //创建文件
+	f, err := os.Create("../data/csv/tokenMapERC721ResSorted.csv") 
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
-	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
-	w := csv.NewWriter(f)         //创建一个新的写入文件流
+	f.WriteString("\xEF\xBB\xBF")
+	w := csv.NewWriter(f)
 	data := [][]string{
 		{"blockNum", "tokenAddress", "tokenId", "startAddr", "tokenIdOwnerAddrOriginal", "tokenIdOwnerAddrEdited", "endAddr_0", "transactionHash_0", "positionOriginal_0", "positionEdited_0", "endAddr_1", "transactionHash_1", "positionOriginal_1", "positionEdited_1"},
 	}
-	w.WriteAll(data) //写入数据
+	w.WriteAll(data)
 	w.Flush()
 	for _, item := range addrInfos {
 		value := item.info
@@ -136,13 +136,13 @@ func getGethOriDataSortByBlockNum() {
 			data := [][]string{
 				{value["blockNum"], value["tokenAddress"], value["tokenId"], value["startAddr"], value["tokenIdOwnerAddrOriginal"], value["tokenIdOwnerAddrEdited"], value["endAddr_0"], value["transactionHash_0"], value["positionOriginal_0"], value["positionEdited_0"], value["endAddr_1"], value["transactionHash_1"], value["positionOriginal_1"], value["positionEdited_1"]},
 			}
-			w.WriteAll(data) //写入数据
+			w.WriteAll(data)
 			w.Flush()
 		} else {
 			data := [][]string{
 				{value["blockNum"], value["tokenAddress"], value["tokenId"], value["startAddr"], value["tokenIdOwnerAddrOriginal"], value["tokenIdOwnerAddrEdited"], value["endAddr_0"], value["transactionHash_0"], value["positionOriginal_0"], value["positionEdited_0"], "none", "none", "none", "none"},
 			}
-			w.WriteAll(data) //写入数据
+			w.WriteAll(data)
 			w.Flush()
 		}
 

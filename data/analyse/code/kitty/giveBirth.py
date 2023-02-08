@@ -1,5 +1,5 @@
 import numpy as np
-import csv    #加载csv包便于读取csv文件
+import csv
 import zipfile
 import os
 import json
@@ -67,7 +67,6 @@ def getInterTransactionFromXblock(resTxMap,flashbotsTxMap,valid_contract_address
         
         ouputCsv(resTxMap,flashbotsTxMap,path,valid_contract_address)
             
-# 第三步骤：获取交易对应的外部to地址，交易手续费
 # ['blockNumber', 'timestamp', 'transactionHash', 'from', 'to', 'toCreate', 
 # 'fromIsContract', 'toIsContract', 'value', 'gasLimit', 'gasPrice', 'gasUsed', 
 # 'callingFunction', 'isError', 'eip2718type', 'baseFeePerGas', 'maxFeePerGas', 'maxPriorityFeePerGas']

@@ -1,5 +1,5 @@
 import numpy as np
-import csv    #加载csv包便于读取csv文件
+import csv
 import zipfile
 import os
 import json
@@ -120,7 +120,6 @@ def get_mortgage_reward_fromERC20(txMap,flashbotsTxMap,pairAddressMap,costMap,ou
             pickle.dump(txMap,tf)
         ouputCsv(txMap,flashbotsTxMap,outputPath_csv)
             
-# 第三步骤：获取交易对应的外部to地址，交易手续费
 # ['blockNumber', 'timestamp', 'transactionHash', 'from', 'to', 'toCreate', 
 # 'fromIsContract', 'toIsContract', 'value', 'gasLimit', 'gasPrice', 'gasUsed', 
 # 'callingFunction', 'isError', 'eip2718type', 'baseFeePerGas', 'maxFeePerGas', 'maxPriorityFeePerGas']
@@ -190,20 +189,6 @@ def ouputCsv(txMap,flashbotsTxMap,outputPath_csv):
             row=[key,transactionFee,coinbase_transfer,total_miner_reward,value["mortgage"],value["reward"],value["cost"]]
             writer.writerow(row)
 
-# 定义范式
-'''
-收益-reward
-weth:
-    pair_kitty_weth-> A
-    
-确认存在抵押行为-mortgage
-WrappedG0:
-    zeroAddress -> A
-    
-成本-cost
-Ether:
-    A -> 交易所地址
-'''
 
 zeroAddress="0x0000000000000000000000000000000000000000"
 weth="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2".lower()
