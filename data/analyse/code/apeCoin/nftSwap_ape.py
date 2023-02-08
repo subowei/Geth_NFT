@@ -171,7 +171,6 @@ def get_reward_fromERC20(txMap,flashbotsTxMap,pairAddressMap,outputPath_dict,out
             pickle.dump(txMap,tf)
         ouputCsv(txMap,flashbotsTxMap,outputPath_csv)
             
-# 第三步骤：获取交易对应的外部to地址，交易手续费
 # ['blockNumber', 'timestamp', 'transactionHash', 'from', 'to', 'toCreate', 
 # 'fromIsContract', 'toIsContract', 'value', 'gasLimit', 'gasPrice', 'gasUsed', 
 # 'callingFunction', 'isError', 'eip2718type', 'baseFeePerGas', 'maxFeePerGas', 'maxPriorityFeePerGas']
@@ -246,20 +245,6 @@ def ouputCsv(txMap,outputPath_csv):
             row=[key]
             writer.writerow(row)
 
-# 定义范式
-'''
-收益-reward
-weth:
-    pair_kitty_weth-> A
-    
-确认存在抵押行为-mortgage
-WrappedG0:
-    zeroAddress -> A
-    
-成本-cost
-Ether:
-    A -> 交易所地址
-'''
 
 zeroAddress="0x0000000000000000000000000000000000000000"
 weth="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2".lower()

@@ -18,7 +18,6 @@ var mapAddrs = make(map[string]map[string]string)
 
 var mapTxsForArbitrage = make(map[string]map[string]string)
 
-// 统计每种nft受交易重排序的次数
 var tokenMap = make(map[string]map[string]int)
 
 func store(data interface{}, filename string) {
@@ -61,7 +60,6 @@ func combineMap(map0 map[string]map[string]string, map1 map[string]map[string]st
 	return map0
 }
 
-// 获取原始信息
 func getGethOriDataSortByBlockNum() {
 	var addrInfos AddrInfos
 	// var resMapAddrs = make(map[string]map[string]string)
@@ -92,7 +90,7 @@ func getGethOriDataSortByBlockNum() {
 	}
 
 	fmt.Println("addrInfos len", len(addrInfos))
-	// 按照blockNum从小到大排序
+
 	sort.SliceStable(addrInfos, func(i, j int) bool {
 		i_blockNum, _ := strconv.Atoi(addrInfos[i].info["blockNum"])
 		j_blockNum, _ := strconv.Atoi(addrInfos[j].info["blockNum"])

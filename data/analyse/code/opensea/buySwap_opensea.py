@@ -126,7 +126,6 @@ def get_mortgage_reward_fromERC20(txMap,flashbotsTxMap,pairAddressMap,outputPath
             pickle.dump(txMap,tf)
         ouputCsv(txMap,flashbotsTxMap,outputPath_csv)
             
-# 第三步骤：获取交易对应的外部to地址，交易手续费
 # ['blockNumber', 'timestamp', 'transactionHash', 'from', 'to', 'toCreate', 
 # 'fromIsContract', 'toIsContract', 'value', 'gasLimit', 'gasPrice', 'gasUsed', 
 # 'callingFunction', 'isError', 'eip2718type', 'baseFeePerGas', 'maxFeePerGas', 'maxPriorityFeePerGas']
